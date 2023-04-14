@@ -5,6 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #5db9ff;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 100%;
+  padding: 0 2rem 2rem 2rem;
 }
 
 code {
