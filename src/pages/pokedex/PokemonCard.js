@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
+import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
@@ -58,7 +60,9 @@ export function PokemonCard({ pokemon, setPokedexData }) {
         </Typography>
         <img alt="" src={pokemon.imgUrl} className={classes.avatar} />
         <Typography variant="h5" component="h2">
-          {pokemon.name}
+          <Link component={RouterLink} to={`/pokemon/${pokemon.id}`}>
+            {pokemon.name}
+          </Link>
         </Typography>
         <Typography color="textSecondary">
           {pokemon.pokemonTypes.join(', ')}
