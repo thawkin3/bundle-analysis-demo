@@ -21,9 +21,6 @@ export default function Nav() {
             <Button component={NavLink} to="/about" color="inherit">
               About
             </Button>
-            <Button component={NavLink} to="/careers" color="inherit">
-              Careers
-            </Button>
           </nav>
         </Toolbar>
       </AppBar>
