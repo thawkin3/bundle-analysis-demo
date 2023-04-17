@@ -19,9 +19,6 @@ const useStyles = makeStyles(() => ({
     borderRadius: 0,
     marginBottom: 8,
   },
-  text: {
-    marginBottom: 16,
-  },
 }))
 
 export default function Pokemon() {

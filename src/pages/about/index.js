@@ -8,9 +8,6 @@ const useStyles = makeStyles(() => ({
   root: {
     padding: 32,
   },
-  text: {
-    marginBottom: 16,
-  },
 }))
 
 export default function About() {
