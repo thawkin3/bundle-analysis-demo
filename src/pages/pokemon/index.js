@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { jsPDF } from "jspdf";
+import { jsPDF } from 'jspdf'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper'
@@ -31,14 +31,14 @@ export default function Pokemon() {
   const pokemon = pokemonData[id - 1]
 
   const saveAsPdf = () => {
-    const doc = new jsPDF('p', 'pt', 'a4');
+    const doc = new jsPDF('p', 'pt', 'a4')
 
     // Ideally we'd convert the HTML content to a PDF here.
     // jsPDF doesn't seem to play nice with Material UI out of the box,
     // and for the purposes of this demo, I don't want to spend time on this.
     // So, we'll fake the PDF output with some simple text here.
     doc
-      .setFont("Helvetica")
+      .setFont('Helvetica')
       .text(`${pokemon.name}`, 60, 60)
       .text(`Number: ${pokemon.id}`, 60, 90)
       .text(`Type: ${pokemon.pokemonTypes.join(', ')}`, 60, 120)
@@ -54,7 +54,11 @@ export default function Pokemon() {
         <Typography component="h1" variant="h3" paragraph>
           {pokemon.name}
         </Typography>
-        <Button onClick={saveAsPdf} variant="contained" sx={{ position: 'absolute', top: 16, right: 16, }}>
+        <Button
+          onClick={saveAsPdf}
+          variant="contained"
+          sx={{ position: 'absolute', top: 16, right: 16 }}
+        >
           Save as PDF
         </Button>
         <Typography paragraph>
