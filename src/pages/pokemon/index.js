@@ -31,16 +31,16 @@ export default function Pokemon() {
     <Container>
       <Paper className={classes.root}>
         <img alt="" src={pokemon.imgUrl} className={classes.avatar} />
-        <Typography component="h1" variant="h3" className={classes.text}>
+        <Typography component="h1" variant="h3" paragraph>
           {pokemon.name}
         </Typography>
-        <Typography className={classes.text}>
+        <Typography paragraph>
           <b>Number:</b> {id}
         </Typography>
-        <Typography className={classes.text}>
+        <Typography paragraph>
           <b>Type:</b> {pokemon.pokemonTypes.join(', ')}
         </Typography>
-        <Typography className={classes.text}>
+        <Typography paragraph>
           <b>Fun Facts:</b> Lorem ipsum dolor sit amet, consectetur adipiscing
           elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua. Sit amet nisl suscipit adipiscing bibendum. Tristique risus
@@ -55,7 +55,7 @@ export default function Pokemon() {
           nullam eget felis eget. Gravida dictum fusce ut placerat orci nulla
           pellentesque.
         </Typography>
-        <Typography className={classes.text}>
+        <Typography paragraph>
           Orci sagittis eu volutpat odio facilisis mauris sit. Integer enim
           neque volutpat ac tincidunt. Dui ut ornare lectus sit. Aenean sed
           adipiscing diam donec adipiscing tristique risus. Pulvinar neque
@@ -65,7 +65,7 @@ export default function Pokemon() {
           donec massa sapien faucibus et. Eleifend mi in nulla posuere
           sollicitudin.
         </Typography>
-        <Typography className={classes.text}>
+        <Typography paragraph>
           Congue eu consequat ac felis donec et odio pellentesque. Morbi leo
           urna molestie at elementum eu facilisis sed odio. Sit amet consectetur
           adipiscing elit duis tristique sollicitudin. Sit amet consectetur
@@ -80,7 +80,7 @@ export default function Pokemon() {
           fermentum et. Congue mauris rhoncus aenean vel. Cursus risus at
           ultrices mi tempus.
         </Typography>
-        <Typography className={classes.text}>
+        <Typography paragraph>
           Venenatis tellus in metus vulputate eu. Duis convallis convallis
           tellus id interdum velit. Cursus in hac habitasse platea dictumst
           quisque sagittis. Massa tincidunt nunc pulvinar sapien et ligula
