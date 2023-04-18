@@ -1,5 +1,6 @@
 import React from 'react'
 import Container from '@mui/material/Container'
+import Link from '@mui/material/Link'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
@@ -45,11 +46,19 @@ export default function About() {
           visitors.
         </Typography>
         <Typography component="h2" variant="h6" paragraph>
-          Peer Dependencies and Externals
+          Learn About Third-Party Dependencies with BundlePhobia
+        </Typography>
+        <Typography paragraph>
+          View info about package size, dependency makeup, and tree
+          shakeability.
+        </Typography>
+        <Typography component="h2" variant="h6" paragraph>
+          More Info
         </Typography>
         <Typography>
-          Don't bundle in multiple copies of dependencies, especially if you're
-          authoring an npm package or a library.
+          <Link href="https://github.com/thawkin3/bundle-analysis-demo">
+            View this app's code on GitHub
+          </Link>
         </Typography>
       </Paper>
     </Container>
