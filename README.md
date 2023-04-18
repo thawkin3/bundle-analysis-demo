@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Bundle Analysis Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is a Pokédex, but it's so much more! It's also a demo app for teaching developers **how to reduce the bundle size of their React apps**.
 
-## Available Scripts
+We'll explore concepts like:
 
-In the project directory, you can run:
+- Using `webpack-bundle-analyzer` to inspect the makeup of our JavaScript bundles
+- Using `React.lazy` and `React.Suspense` to code split our page routes
+- Using **dynamic imports** to code split heavyweight functionality
+- Using [https://bundlephobia.com/](https://bundlephobia.com/) to choose our third-party dependencies wisely
 
-### `npm start`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then ejected.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Running the Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before beginning, install your dependencies with `npm install`. Also install the `serve` package globally by running `npm install -g serve`.
 
-### `npm test`
+As you make changes to the app, you'll want to take note of the amount of JavaScript bundles, the size of the JavaScript bundles, and when they are loaded while using the app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+With each change that you'd like to inspect, do the following:
 
-### `npm run build`
+1. `npm run build:stats`
+2. `serve -s build`
+3. View the locally hosted app in your browser
+4. Open the Network tab in your browser's dev tools and see the JavaScript bundles that are used
+5. `npm run analyze`
+6. View the visualizer locally in your browser to see th makeup of your JavaScript bundles
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Avaiable Scripts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm run analyze`: Analyzes the bundle stats from the production app
+- `npm run build`: Builds the production app
+- `npm run build:stats`: Builds the production app and generates a stats bundle
+- `npm run format`: Formats the code using Prettier
+- `npm run format:watch`: Runs Prettier in watch mode
+- `npm start`: Starts the development server on port 3000
+- `npm test`: Runs the tests in watch mode
+- `npm run test:coverage`: Runs the tests not in watch mode and collects coverage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## More Resources
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
+- [Code Splitting with React.lazy](https://legacy.reactjs.org/docs/code-splitting.html#reactlazy)
+- [Code Splitting with Dynamic Imports](https://legacy.reactjs.org/docs/code-splitting.html#import)
+- [BundlePhobia](https://bundlephobia.com/)
