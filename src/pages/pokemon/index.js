@@ -1,6 +1,6 @@
-// Code splitting the "Save as PDF" functionality by dynamically importing jspdf
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { jsPDF } from 'jspdf'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper'
@@ -28,22 +28,20 @@ export default function Pokemon() {
   const pokemon = pokemonData[id - 1]
 
   const saveAsPdf = () => {
-    import('jspdf').then((module) => {
-      const doc = new module.jsPDF('p', 'pt', 'a4')
+    const doc = new jsPDF('p', 'pt', 'a4')
 
-      // Ideally we'd convert the HTML content to a PDF here.
-      // jsPDF doesn't seem to play nice with Material UI out of the box,
-      // and for the purposes of this demo, I don't want to spend time on this.
-      // So, we'll fake the PDF output with some simple text here.
-      doc
-        .setFont('Helvetica')
-        .text(`${pokemon.name}`, 60, 60)
-        .text(`Number: ${pokemon.id}`, 60, 90)
-        .text(`Type: ${pokemon.pokemonTypes.join(', ')}`, 60, 120)
-        .text('Fun Facts: Lorem ipsum', 60, 150)
+    // Ideally we'd convert the HTML content to a PDF here.
+    // jsPDF doesn't seem to play nice with Material UI out of the box,
+    // and for the purposes of this demo, I don't want to spend time on this.
+    // So, we'll fake the PDF output with some simple text here.
+    doc
+      .setFont('Helvetica')
+      .text(`${pokemon.name}`, 60, 60)
+      .text(`Number: ${pokemon.id}`, 60, 90)
+      .text(`Type: ${pokemon.pokemonTypes.join(', ')}`, 60, 120)
+      .text('Fun Facts: Lorem ipsum', 60, 150)
 
-      doc.save(`${pokemon.name}.pdf`)
-    })
+    doc.save(`${pokemon.name}.pdf`)
   }
 
   return (
@@ -147,10 +145,9 @@ export default function Pokemon() {
   )
 }
 
-// No dynamic imports here
+// Code splitting the "Save as PDF" functionality by dynamically importing jspdf
 // import React from 'react'
 // import { useParams } from 'react-router-dom'
-// import { jsPDF } from 'jspdf'
 // import Button from '@mui/material/Button'
 // import Container from '@mui/material/Container'
 // import Paper from '@mui/material/Paper'
@@ -178,20 +175,22 @@ export default function Pokemon() {
 //   const pokemon = pokemonData[id - 1]
 
 //   const saveAsPdf = () => {
-//     const doc = new jsPDF('p', 'pt', 'a4')
+//     import('jspdf').then((module) => {
+//       const doc = new module.jsPDF('p', 'pt', 'a4')
 
-//     // Ideally we'd convert the HTML content to a PDF here.
-//     // jsPDF doesn't seem to play nice with Material UI out of the box,
-//     // and for the purposes of this demo, I don't want to spend time on this.
-//     // So, we'll fake the PDF output with some simple text here.
-//     doc
-//       .setFont('Helvetica')
-//       .text(`${pokemon.name}`, 60, 60)
-//       .text(`Number: ${pokemon.id}`, 60, 90)
-//       .text(`Type: ${pokemon.pokemonTypes.join(', ')}`, 60, 120)
-//       .text('Fun Facts: Lorem ipsum', 60, 150)
+//       // Ideally we'd convert the HTML content to a PDF here.
+//       // jsPDF doesn't seem to play nice with Material UI out of the box,
+//       // and for the purposes of this demo, I don't want to spend time on this.
+//       // So, we'll fake the PDF output with some simple text here.
+//       doc
+//         .setFont('Helvetica')
+//         .text(`${pokemon.name}`, 60, 60)
+//         .text(`Number: ${pokemon.id}`, 60, 90)
+//         .text(`Type: ${pokemon.pokemonTypes.join(', ')}`, 60, 120)
+//         .text('Fun Facts: Lorem ipsum', 60, 150)
 
-//     doc.save(`${pokemon.name}.pdf`)
+//       doc.save(`${pokemon.name}.pdf`)
+//     })
 //   }
 
 //   return (
