@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "analyze": "webpack-bundle-analyzer build/bundle-stats.json",
     "build": "node scripts/build.js",
+    "build:stats": "node scripts/build.js --stats",
     "format": "prettier --write .",
     "format:watch": "onchange . -- prettier --write {{changed}}",
     "start": "node scripts/start.js",
@@ -92,7 +94,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "onchange": "^7.1.0",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.7",
+    "webpack-bundle-analyzer": "^4.8.0"
   },
   "jest": {
     "roots": [
